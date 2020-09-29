@@ -1,0 +1,103 @@
+.contact-page {
+  min-height: 40vh;
+  width: 85%;
+  margin: 0 auto;
+}
+
+h1 {
+  text-align: left;
+  margin: 0 auto;
+}
+
+.contact p {
+  padding-top: 16px;
+  padding-bottom: 16px;
+  text-align: left;
+}
+
+.contact-form {
+  max-width: 760px;
+  margin: auto;
+}
+
+.contact-form {
+  display: grid;
+  justify-items: stretch;
+  max-width: 80%;
+  margin: 0 auto;
+
+  grid-template-rows: 32px 32px 32px 32px;
+  grid-template-columns: 45% auto 45%;
+
+  row-gap: 16px;
+}
+
+.contact-form .name {
+  grid-row: 1 / 2;
+  grid-column: 1 / 2;
+}
+
+.contact-form .email {
+  grid-row: 1 / 2;
+  grid-column: 3 / 4;
+}
+
+.contact-form .text {
+  grid-row: 2 / 4;
+  grid-column: 1 / 4;
+}
+
+.contact-form .submit {
+  justify-self: flex-end;
+  grid-row: 4 / 5;
+  grid-column: 3 / 4;
+}
+
+/* 
+.contact input,
+textarea {
+  margin: 8px;
+} */
+
+input[type="text"],
+input[type="email"],
+textarea {
+  color: var(--secondary);
+
+  padding: 6px 8px;
+  box-sizing: border-box;
+
+  border: 1px solid var(--link);
+  border-radius: 6px;
+}
+
+input[type="text"]:hover,
+input[type="email"]:hover,
+textarea:hover,
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+  border: 1px solid var(--secondary);
+}
+
+input[type="submit"] {
+  background-color: var(--secondary);
+  border: none;
+
+  padding: 12px;
+
+  min-width: 32px;
+  align-self: center;
+}
+
+input[type="submit"]:hover {
+  background-color: var(--primary);
+
+  color: var(--secondary);
+}
+
+@media only screen and (max-width: 768px) {
+  .contact-form {
+    max-width: 85%;
+  }
+}

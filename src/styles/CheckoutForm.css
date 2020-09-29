@@ -1,0 +1,52 @@
+.FormGroup {
+  display: grid;
+  justify-items: stretch;
+  max-width: 70%;
+  margin: 0 auto;
+
+  grid-template-rows: 32px 32px 32px;
+  grid-template-columns: 25% 25% 25% 25%;
+
+  column-gap: 16px;
+  row-gap: 16px;
+}
+
+.StripeElement {
+  max-width: 400px;
+  margin: auto;
+  padding: 8px;
+
+  margin-top: 16px;
+  background-color: white;
+}
+
+.name {
+  grid-row: 1 / 2;
+  grid-column: 1 / 3;
+}
+
+.email {
+  grid-row: 1 / 2;
+  grid-column: 3 / 5;
+}
+
+.address {
+  grid-row: 2 / 3;
+  grid-column: 1 / 5;
+}
+
+.city {
+  grid-row: 3 / 4;
+  grid-column: 1 / 3;
+}
+
+.state {
+  grid-row: 3 / 4;
+  grid-column: 3 / 5;
+}
+
+.btn {
+  margin-top: 12px;
+  padding: 8px;
+  font-size: 12px;
+}

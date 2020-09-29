@@ -1,0 +1,67 @@
+.posts {
+  max-width: 760px;
+  margin: auto;
+}
+
+.post {
+  display: flex;
+  margin: auto;
+  padding-bottom: 32px;
+}
+
+.post p {
+  width: 400px;
+}
+
+.post img {
+  padding: 4px;
+  max-width: 100%;
+  height: auto;
+}
+
+.right {
+  flex-flow: row nowrap;
+}
+
+.left {
+  flex-flow: row-reverse nowrap;
+}
+
+.text {
+  vertical-align: middle;
+  display: inline-block;
+}
+
+.text h4 {
+  font-family: "Cinzel";
+  font-size: 20px;
+  padding: 0;
+  margin: 0;
+}
+
+.text span {
+  height: 25%;
+  vertical-align: middle;
+  display: inline-block;
+}
+
+@media only screen and (max-width: 768px) {
+  .text h4 {
+    padding-bottom: 12px;
+  }
+
+  .text p {
+    margin: auto;
+    padding-bottom: 16px;
+  }
+
+  .post {
+    display: flex;
+    flex-flow: column wrap;
+  }
+
+  .post img {
+    align-self: center;
+    max-width: 350px;
+  }
+}

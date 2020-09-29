@@ -1,0 +1,8 @@
+.remove-item {
+  background: none;
+  border: none;
+  fill: red;
+
+  display: inline-block;
+  vertical-align: middle;
+}

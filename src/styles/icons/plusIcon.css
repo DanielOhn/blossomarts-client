@@ -1,0 +1,12 @@
+.plus-icon {
+  fill: var(--primary);
+  background: none;
+  border: none;
+
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.plus-icon:hover {
+  fill: var(--secondary);
+}

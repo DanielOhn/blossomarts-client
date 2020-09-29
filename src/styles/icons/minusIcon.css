@@ -1,0 +1,12 @@
+.minus-icon {
+  fill: var(--secondary);
+  background: none;
+  border: none;
+
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.minus-icon:hover {
+  fill: var(--primary);
+}

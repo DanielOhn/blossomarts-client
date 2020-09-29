@@ -1,0 +1,66 @@
+.App {
+  text-align: center;
+  min-height: 100vh;
+}
+
+.content {
+  width: 100%;
+
+  margin: auto;
+}
+
+.logo {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-around;
+
+  align-items: center;
+  padding-top: 24px;
+}
+
+.logo img {
+  padding-bottom: 16px;
+}
+
+.logo-image {
+  max-height: 240px;
+  width: auto;
+}
+
+.nav {
+  list-style: none;
+  margin: auto;
+  padding: 8px;
+  max-width: 100%;
+
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+}
+
+.nav a {
+  text-decoration: none;
+  color: var(--primary);
+  padding: 8px;
+}
+
+.nav a:hover {
+  color: var(--link);
+}
+
+@media only screen and (max-width: 768px) {
+  .content {
+    margin: auto;
+  }
+
+  .nav {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    width: 100%;
+  }
+
+  .nav li {
+    padding: 4px;
+  }
+}
