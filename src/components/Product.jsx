@@ -15,7 +15,9 @@ const Product = ({ match }) => {
   useEffect(() => {
     const fetchProduct = () => {
       return axios
-        .get(`${process.env.API_URL}/products/${match.params.id}`)
+        .get(
+          `https://blossomarts-api.herokuapp.com/products/${match.params.id}`
+        )
         .then((results) => {
           setSkus(results.data)
           setProduct(results.data[0])
