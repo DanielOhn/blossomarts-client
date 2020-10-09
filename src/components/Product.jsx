@@ -27,7 +27,9 @@ const Product = ({ match }) => {
     fetchProduct()
   }, [match.params.id])
 
-  axios.get(`/products/${match.params.id}`).then((results) => {})
+  axios
+    .get(`https://blossomarts-api.herokuapp.com/products/${match.params.id}`)
+    .then((results) => {})
 
   const addProduct = () => {
     let prod = {
