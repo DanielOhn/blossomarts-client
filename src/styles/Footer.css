@@ -1,0 +1,9 @@
+.footer {
+  height: 5vh;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+
+  width: 25%;
+  margin: auto;
+}

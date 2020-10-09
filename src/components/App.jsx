@@ -11,6 +11,7 @@ import Product from "../components/Product"
 import Products from "../pages/Products"
 import Checkout from "../pages/Checkout"
 import Payment from "../pages/Payment"
+import Footer from "../components/Footer"
 
 function App() {
   return (
@@ -51,6 +52,7 @@ function App() {
           </Switch>
         </div>
       </Router>
+      <Footer />
     </div>
   )
 }
