@@ -7,9 +7,6 @@ import "../styles/Product.css"
 import Plus from "../icons/plus"
 import Minus from "../icons/minus"
 
-// Don't call loadstripe
-// Don't want to load more than u have too
-
 const Product = ({ match }) => {
   const [product, setProduct] = useState()
   const [skus, setSkus] = useState()
