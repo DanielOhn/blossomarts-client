@@ -12,7 +12,7 @@ function Payment() {
   const [secret, setSecret] = useState()
 
   useEffect(() => {
-    fetch(`/payment-intent`, {
+    fetch(`${process.env.API_URL}/payment-intent`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

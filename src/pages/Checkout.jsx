@@ -18,7 +18,7 @@ function Checkout() {
   useEffect(() => {
     localStorage.setItem("cart", cart)
 
-    fetch(`/get-payment`, {
+    fetch(`${process.env.API_URL}/get-payment`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

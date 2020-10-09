@@ -14,10 +14,12 @@ const Product = ({ match }) => {
 
   useEffect(() => {
     const fetchProduct = () => {
-      return axios.get(`/products/${match.params.id}`).then((results) => {
-        setSkus(results.data)
-        setProduct(results.data[0])
-      })
+      return axios
+        .get(`${process.env.API_URL}/products/${match.params.id}`)
+        .then((results) => {
+          setSkus(results.data)
+          setProduct(results.data[0])
+        })
     }
 
     fetchProduct()

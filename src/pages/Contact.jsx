@@ -11,7 +11,7 @@ function Contact() {
   // const [url] = useState("http://localhost:3001/")
 
   function sendEmail() {
-    fetch(`/contact`, {
+    fetch(`${process.env.API_URL}/contact`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
