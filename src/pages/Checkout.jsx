@@ -16,31 +16,33 @@ function Checkout() {
   const [total, setTotal] = useState()
 
   useEffect(() => {
-    localStorage.setItem("cart", cart)
+    if (cart) {
+      localStorage.setItem("cart", cart)
 
-    fetch(`https://blossomarts-api.herokuapp.com/get-payment`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
+      fetch(`https://blossomarts-api.herokuapp.com/get-payment`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
 
-      body: cart,
-    })
-      .then((res) => {
-        return res.json()
+        body: cart,
       })
-      .then((data) => {
-        setPrices(data.prices)
-        setTotal(data.total)
-      })
-      .catch((err) => {
-        console.log(err)
-      })
+        .then((res) => {
+          return res.json()
+        })
+        .then((data) => {
+          setPrices(data.prices)
+          setTotal(data.total)
+        })
+        .catch((err) => {
+          console.log(err)
+        })
+    }
   }, [cart])
 
   const clearCart = () => {
     localStorage.removeItem("cart")
-    window.location.reload(false)
+    window.location.reload(true)
   }
 
   const removeItem = (name) => {
@@ -52,9 +54,9 @@ function Checkout() {
         ? localStorage.setItem("cart", JSON.stringify(result))
         : localStorage.removeItem("cart")
 
-      window.location.reload(true)
       return i
     })
+    window.location.reload(true)
   }
 
   const addQt = (name) => {
