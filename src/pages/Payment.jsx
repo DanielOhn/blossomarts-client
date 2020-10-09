@@ -12,7 +12,7 @@ function Payment() {
   const [secret, setSecret] = useState()
 
   useEffect(() => {
-    fetch(`${process.env.API_URL}/payment-intent`, {
+    fetch(`https://blossomarts-api.herokuapp.com/payment-intent`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
