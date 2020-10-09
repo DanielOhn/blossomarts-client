@@ -2,7 +2,11 @@ import React from "react"
 
 const Twitter = () => {
   return (
-    <a href="https://twitter.com/blossombyeve" rel="noopener" target="_blank">
+    <a
+      href="https://twitter.com/blossombyeve"
+      rel="noopener noreferrer"
+      target="_blank"
+    >
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="24"
