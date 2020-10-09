@@ -13,11 +13,17 @@ const Product = ({ match }) => {
   const [qt, setqt] = useState(1)
 
   useEffect(() => {
-    axios.get(`/products/${match.params.id}`).then((results) => {
-      setSkus(results.data)
-      setProduct(results.data[0])
-    })
-  }, [])
+    const fetchProduct = () => {
+      return axios.get(`/products/${match.params.id}`).then((results) => {
+        setSkus(results.data)
+        setProduct(results.data[0])
+      })
+    }
+
+    fetchProduct()
+  }, [match.params.id])
+
+  axios.get(`/products/${match.params.id}`).then((results) => {})
 
   const addProduct = () => {
     let prod = {
@@ -48,6 +54,8 @@ const Product = ({ match }) => {
         item.qt = qt
         bool = true
       }
+
+      return bool
     })
 
     return bool

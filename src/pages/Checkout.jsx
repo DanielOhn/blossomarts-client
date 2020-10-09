@@ -53,6 +53,7 @@ function Checkout() {
         : localStorage.removeItem("cart")
 
       window.location.reload(true)
+      return i
     })
   }
 
