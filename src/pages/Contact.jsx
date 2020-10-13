@@ -33,17 +33,16 @@ function Contact() {
 
         <div className="faq-section">
           <QASection
-            question="How long does it take for the product to be delivered?"
-            answer="It usually takes around 2 week until you recieve your product if you live within the United States."
+            question="Can I returned an item?"
+            answer="All sales are final. If, you received a piece that is broken please contact me within 24 hours of receiving the product. If, I do accept the return you must pay for any shipping costs."
           />
           <QASection
             question="One of your products is out of stock.  When will you get more?"
-            answer="It usually takes a while for us to restock on certain products since everything is made by hand.  
-            Expect it to restock in about 3 weeks time depending on the popularity of the product."
+            answer="Every piece is unique from one another, so within the next week or two a new piece will be created."
           />
           <QASection
-            question="Why is Yvette a dumb brat?"
-            answer="Wouldn't we all like to know the answer to this one."
+            question="Can I order a custom piece?"
+            answer="Yes! Just email me blossombyeve@gmail.com or send a message on on my Twitter or Instagram."
           />
         </div>
       </div>
