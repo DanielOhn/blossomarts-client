@@ -3,7 +3,7 @@ import React from "react"
 const Instagram = () => {
   return (
     <a
-      href="https://twitter.com/blossombyeve"
+      href="https://www.instagram.com/blossombyeve/"
       rel="noopener noreferrer"
       target="_blank"
     >
