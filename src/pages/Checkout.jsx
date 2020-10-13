@@ -131,6 +131,10 @@ function Checkout() {
       <div className="checkout-details">
         <h1 className="primary">Checkout</h1>
         <hr className="primary" />
+        <p>
+          THIS WEBSITE IS STILL IN DEVELOPMENT YOU CANNOT ACTUALLY ORDER ANY
+          PRODUCTS.{" "}
+        </p>
         {cart && prices && (
           <>
             <table className="cart">

@@ -9,7 +9,7 @@ import Minus from "../icons/minus"
 
 const Product = ({ match }) => {
   const [product, setProduct] = useState()
-  const [skus, setSkus] = useState()
+  const [skus, setSkus] = useState({})
   const [qt, setqt] = useState(1)
 
   useEffect(() => {
@@ -26,10 +26,6 @@ const Product = ({ match }) => {
 
     fetchProduct()
   }, [match.params.id])
-
-  axios
-    .get(`https://blossomarts-api.herokuapp.com/products/${match.params.id}`)
-    .then((results) => {})
 
   const addProduct = () => {
     let prod = {
@@ -67,6 +63,16 @@ const Product = ({ match }) => {
     return bool
   }
 
+  const displaySkus = Object.keys(skus).map((i) => {
+    let name = skus[i].attributes.name.split(" ")[0]
+
+    return (
+      <button key={i} className="heavy btn" onClick={() => changeProduct(i)}>
+        {name}
+      </button>
+    )
+  })
+
   const changeProduct = (num) => {
     setProduct(skus[num])
   }
@@ -97,17 +103,7 @@ const Product = ({ match }) => {
           <div className="product-details">
             <img alt={product.attributes.name} src={product.image} />
             <div className="details">
-              <div className="details-header">
-                <button className="heavy btn" onClick={() => changeProduct(0)}>
-                  Purple
-                </button>
-                <button className="heavy btn" onClick={() => changeProduct(1)}>
-                  White
-                </button>
-                <button className="heavy btn" onClick={() => changeProduct(2)}>
-                  Blue
-                </button>
-              </div>
+              <div className="details-header">{displaySkus}</div>
               <div className="product-price">
                 <p className="light normal value">
                   ${(product.price / 100).toFixed(2)}
