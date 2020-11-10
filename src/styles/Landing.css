@@ -1,0 +1,39 @@
+.landing {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+}
+
+.header {
+  width: 85%;
+  margin: 0 auto;
+}
+
+.dark-section {
+  background-color: lightslategray;
+  color: white;
+
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-evenly;
+  align-items: center;
+
+  margin: 0;
+  height: 320px;
+}
+
+.text {
+  width: 320px;
+}
+
+.light-section {
+  color: black;
+
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-evenly;
+  align-items: center;
+
+  margin: 0;
+  height: 320px;
+}

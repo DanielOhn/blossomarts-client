@@ -109,7 +109,7 @@ function CheckoutForm({ secret }) {
         setError(null)
         setProcessing(false)
         setSuccess(true)
-        alert("success!")
+        window.location.replace("/success")
       }
     }
   }

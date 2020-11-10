@@ -60,7 +60,7 @@ function Contact() {
           <input className="email" placeholder="Your Email" type="text" />
           <textarea
             type="text"
-            className="text"
+            className="textbox"
             placeholder="We would love your feedback!"
           ></textarea>
 

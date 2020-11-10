@@ -5,13 +5,15 @@ import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom"
 
 import logo from "../images/ba-logo.png"
 
-import Home from "../pages/Home"
+import Landing from "../pages/Landing"
 import Contact from "../pages/Contact"
 import Product from "../components/Product"
 import Products from "../pages/Products"
 import Checkout from "../pages/Checkout"
 import Payment from "../pages/Payment"
 import Footer from "../components/Footer"
+import Success from "../pages/Success"
+import NotFound from "../pages/NotFound"
 
 function App() {
   return (
@@ -38,7 +40,7 @@ function App() {
         </div>
         <div className="content">
           <Switch>
-            <Route path="/" exact render={() => <Home />} />
+            <Route path="/" exact render={() => <Landing />} />
             <Route path="/checkout" exact render={() => <Checkout />} />
             <Route path="/contact" exact render={() => <Contact />} />
             <Route path="/products" exact component={Products} />
@@ -48,7 +50,8 @@ function App() {
               render={(props) => <Product {...props} />}
             />
             <Route path="/payment" exact component={Payment} />
-            <Route path="/404" exact render={() => <p>Page not found.</p>} />
+            <Route path="/success" exact render={() => <Success />} />
+            <Route component={NotFound} />
           </Switch>
         </div>
       </Router>

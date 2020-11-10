@@ -42,7 +42,7 @@ h1 {
   grid-column: 3 / 4;
 }
 
-.contact-form .text {
+.contact-form .textbox {
   grid-row: 2 / 4;
   grid-column: 1 / 4;
 }
