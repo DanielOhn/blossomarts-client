@@ -61,9 +61,3 @@ function App() {
 }
 
 export default App
-
-/* <Route
-  path="/product/:name"
-  extact
-  render={(props) => <Product data={product} {...props} />}
-/> */
