@@ -10,7 +10,7 @@ const Products = ({ match }) => {
   const [products, setProducts] = useState({})
 
   useEffect(() => {
-    axios.get(`https://blossomarts-api.herokuapp.com/products`).then((res) => {
+    axios.get(`http://localhost:3001/products`).then((res) => {
       setProducts(res.data.data)
     })
   }, [])

@@ -19,7 +19,7 @@ function Checkout() {
     if (cart) {
       localStorage.setItem("cart", cart)
 
-      fetch(`https://blossomarts-api.herokuapp.com/get-payment`, {
+      fetch(`http://localhost:3001/get-payment`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -133,7 +133,7 @@ function Checkout() {
         <hr className="primary" />
         <p>
           THIS WEBSITE IS STILL IN DEVELOPMENT YOU CANNOT ACTUALLY ORDER ANY
-          PRODUCTS.{" "}
+          PRODUCTS.
         </p>
         {cart && prices && (
           <>

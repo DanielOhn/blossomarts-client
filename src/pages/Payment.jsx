@@ -10,9 +10,10 @@ const stripePromise = loadStripe(process.env.REACT_APP_PUBLISH_KEY)
 
 function Payment() {
   const [secret, setSecret] = useState()
+  const [session, setSession] = useState()
 
   useEffect(() => {
-    fetch(`https://blossomarts-api.herokuapp.com/payment-intent`, {
+    fetch(`http://localhost:3001/payment-intent`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -23,7 +24,9 @@ function Payment() {
         return res.json()
       })
       .then((data) => {
+        console.log(data)
         setSecret(data.clientSecret)
+        setSession(data.sessionID)
       })
       .catch((err) => {
         console.log(err)

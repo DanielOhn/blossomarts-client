@@ -11,7 +11,7 @@ function Contact() {
   // const [url] = useState("http://localhost:3001/")
 
   function sendEmail() {
-    fetch(`https://blossomarts-api.herokuapp.com/contact`, {
+    fetch(`http://localhost:3001/contact`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
