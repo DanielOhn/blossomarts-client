@@ -91,11 +91,14 @@ function CheckoutForm({ secret }) {
       return
     }
 
-    const result = await stripe.confirmCardPayment(secret, {
+    console.log("Secret: ", secret)
+
+    const result = await stripe.confirmCardSetup(secret, {
       payment_method: {
         card: elements.getElement(CardElement),
         billing_details: {
           name: event.target.name.value,
+          email: event.target.email.value,
         },
       },
     })
@@ -103,7 +106,7 @@ function CheckoutForm({ secret }) {
     if (result.error) {
       setProcessing(false)
       console.log(result)
-      alert("error! " + result)
+      alert("error! " + result.message)
     } else {
       if (result.paymentIntent.status === "succeeded") {
         setError(null)
@@ -116,11 +119,6 @@ function CheckoutForm({ secret }) {
 
   return (
     <form onSubmit={handleSubmit}>
-      {error && (
-        <div className="card-error" role="alert">
-          {error}
-        </div>
-      )}
       <BillingDetailsFields />
       <CardElement options={cardStyle} onChange={handleChange} />
       <button

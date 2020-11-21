@@ -2,14 +2,14 @@ import React, { useState, useEffect } from "react"
 
 import "../styles/Payment.css"
 
-import CheckoutForm from "../components/CheckoutForm"
-import { Elements } from "@stripe/react-stripe-js"
+// import CheckoutForm from "../components/CheckoutForm"
+// import { Elements } from "@stripe/react-stripe-js"
 import { loadStripe } from "@stripe/stripe-js"
 
 const stripePromise = loadStripe(process.env.REACT_APP_PUBLISH_KEY)
 
 function Payment() {
-  const [secret, setSecret] = useState()
+  const [error, setError] = useState(null)
   const [session, setSession] = useState()
 
   useEffect(() => {
@@ -24,8 +24,6 @@ function Payment() {
         return res.json()
       })
       .then((data) => {
-        console.log(data)
-        setSecret(data.clientSecret)
         setSession(data.sessionID)
       })
       .catch((err) => {
@@ -33,17 +31,27 @@ function Payment() {
       })
   }, [])
 
+  const handleClick = async (event) => {
+    const stripe = await stripePromise
+
+    const result = stripe.redirectToCheckout({ sessionId: session })
+
+    // return result
+  }
+
   return (
     <div className="payment-intent">
-      {secret && (
-        <div className="payment">
-          <h1 className="primary">Payment</h1>
-          <hr className="primary" />
-          <Elements stripe={stripePromise}>
-            <CheckoutForm secret={secret} />
-          </Elements>
+      {error && (
+        <div>
+          <p>{error}</p>
         </div>
       )}
+      <div className="payment">
+        <h1 className="primary">Payment</h1>
+        <hr className="primary" />
+
+        <button onClick={handleClick}>Click ME!</button>
+      </div>
     </div>
   )
 }
