@@ -13,7 +13,7 @@ function Payment() {
   const [session, setSession] = useState()
 
   useEffect(() => {
-    fetch(`http://localhost:3001/payment-intent`, {
+    fetch(`${process.env.DOMAIN}/payment-intent`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -35,8 +35,6 @@ function Payment() {
     const stripe = await stripePromise
 
     const result = stripe.redirectToCheckout({ sessionId: session })
-
-    // return result
   }
 
   return (

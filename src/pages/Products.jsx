@@ -10,7 +10,7 @@ const Products = ({ match }) => {
   const [products, setProducts] = useState({})
 
   useEffect(() => {
-    axios.get(`http://localhost:3001/products`).then((res) => {
+    axios.get(`${process.env.DOMAIN}/products`).then((res) => {
       setProducts(res.data.data)
     })
   }, [])

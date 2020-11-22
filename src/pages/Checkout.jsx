@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react"
 import "../styles/Checkout.css"
 
-import { Link } from "react-router-dom"
-
+import { loadStripe } from "@stripe/stripe-js"
 import ClearCart from "../icons/clearCart"
 import RemoveItem from "../icons/removeItem"
 import Plus from "../icons/plus"
 import Minus from "../icons/minus"
+
+const stripePromise = loadStripe(process.env.REACT_APP_PUBLISH_KEY)
 
 function Checkout() {
   const [cart, setCart] = useState(
@@ -19,7 +20,7 @@ function Checkout() {
     if (cart) {
       localStorage.setItem("cart", cart)
 
-      fetch(`http://localhost:3001/get-payment`, {
+      fetch(`${process.env.DOMAIN}/get-payment`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -89,6 +90,22 @@ function Checkout() {
     })
 
     setCart(JSON.stringify(result))
+  }
+
+  const handleClick = async (event) => {
+    const stripe = await stripePromise
+
+    const session = await fetch(`http://localhost:3001/payment-intent`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: cart,
+    })
+      .then((res) => res.json())
+      .then((result) => {
+        return result.sessionID
+      })
+
+    const checkout = stripe.redirectToCheckout({ sessionId: session })
   }
 
   const cartListing = Object.keys(cart ? JSON.parse(cart) : {}).map((i) => {
@@ -165,9 +182,9 @@ function Checkout() {
               )}
             </table>
             <div className="btn-class">
-              <Link to="/payment">
-                <button className="btn primary">Proceed to Payment</button>
-              </Link>
+              <button onClick={handleClick} className="btn primary">
+                Proceed to Payment
+              </button>
             </div>
           </>
         )}
