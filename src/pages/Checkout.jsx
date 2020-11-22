@@ -105,7 +105,7 @@ function Checkout() {
         return result.sessionID
       })
 
-    const checkout = stripe.redirectToCheckout({ sessionId: session })
+    stripe.redirectToCheckout({ sessionId: session })
   }
 
   const cartListing = Object.keys(cart ? JSON.parse(cart) : {}).map((i) => {
