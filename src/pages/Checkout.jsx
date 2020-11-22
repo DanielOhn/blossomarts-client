@@ -20,7 +20,7 @@ function Checkout() {
     if (cart) {
       localStorage.setItem("cart", cart)
 
-      fetch(`${process.env.DOMAIN}/get-payment`, {
+      fetch(`https://blossomarts-api.herokuapp.com/get-payment`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

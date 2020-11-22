@@ -10,7 +10,7 @@ function Contact() {
   // const [content, setContent] = useState()
 
   function sendEmail() {
-    fetch(`${process.env.DOMAIN}/contact`, {
+    fetch(`https://blossomarts-api.herokuapp.com/contact`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
