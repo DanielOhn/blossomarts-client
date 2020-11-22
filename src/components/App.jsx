@@ -10,10 +10,10 @@ import Contact from "../pages/Contact"
 import Product from "../components/Product"
 import Products from "../pages/Products"
 import Checkout from "../pages/Checkout"
-import Payment from "../pages/Payment"
 import Footer from "../components/Footer"
 import Success from "../pages/Success"
 import NotFound from "../pages/NotFound"
+import Cancel from "../pages/Cancel"
 
 function App() {
   return (
@@ -49,8 +49,8 @@ function App() {
               exact
               render={(props) => <Product {...props} />}
             />
-            <Route path="/payment" exact component={Payment} />
             <Route path="/success" exact render={() => <Success />} />
+            <Route path="/cancel" exact render={() => <Cancel />} />
             <Route component={NotFound} />
           </Switch>
         </div>
