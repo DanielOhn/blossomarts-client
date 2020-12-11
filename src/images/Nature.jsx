@@ -1,5 +1,7 @@
 import React from "react"
 
+import "../assets/main.css"
+
 const Nature = () => {
   return (
     <svg
@@ -8,6 +10,7 @@ const Nature = () => {
       xmlns="http://www.w3.org/2000/svg"
       height="250"
       viewBox="0 0 692.60517 748.73305"
+      className="max-h-52"
     >
       <circle cx="485.38885" cy="252.48956" r="75.36532" fill="#ff6584" />
       <path

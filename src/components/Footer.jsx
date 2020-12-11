@@ -1,6 +1,7 @@
 import React from "react"
 
 import "../styles/Footer.css"
+import "../assets/main.css"
 
 import Twitter from "../icons/social/twitter"
 import Instagram from "../icons/social/instagram"
@@ -8,7 +9,7 @@ import TikTok from "../icons/social/tiktok"
 
 const Footer = () => {
   return (
-    <div className="footer">
+    <div className="footer m-4">
       <Twitter />
       <Instagram />
       <TikTok />

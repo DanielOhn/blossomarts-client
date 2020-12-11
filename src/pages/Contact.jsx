@@ -1,7 +1,7 @@
 import React from "react"
-import "../styles/Contact.css"
-
 import QASection from "../components/QASection"
+
+import "../assets/main.css"
 
 function Contact() {
   // const [name, setName] = useState()
@@ -25,12 +25,12 @@ function Contact() {
   }
 
   return (
-    <div className="contact-page">
-      <div className="faq">
-        <h1 className="primary">FAQ</h1>
-        <hr className="primary" />
+    <div>
+      <div>
+        <h1 className="text-4xl font-semibold text-gray-900">FAQ</h1>
+        <hr />
 
-        <div className="faq-section">
+        <div>
           <QASection
             question="Can I returned an item?"
             answer="All sales are final. If, you received a piece that is broken please contact me within 24 hours of receiving the product. If, I do accept the return you must pay for any shipping costs."
@@ -45,26 +45,37 @@ function Contact() {
           />
         </div>
       </div>
-      <div className="contact">
-        <h1 className="primary">Contact Us</h1>
-        <hr className="primary" />
+      <div>
+        <h1 className="text-4xl font-semibold text-gray-900">Contact Us</h1>
+        <hr />
 
-        <p className="primary">
+        <p className="text-gray-800">
           We are constantly trying to improve our services and products for our
           customers. Any feedback on where we can improve, comments, and
           suggestions would be appreciated!
         </p>
         <form action="/contact" method="POST" className="contact-form">
-          <input className="name" placeholder="Your Name" type="text" />
-          <input className="email" placeholder="Your Email" type="text" />
-          <textarea
+          <input
+            className="name border-black border w-full p-2 rounded "
+            id="name"
+            placeholder="Your Name"
             type="text"
-            className="textbox"
+          />
+          <input
+            className="email border border-black w-full p-2 rounded"
+            id="email"
+            placeholder="Your Email"
+            type="text"
+          />
+          <textarea
+            className="textbox border w-full p-2 rounded border-black"
+            type="text"
+            id="textbox"
             placeholder="We would love your feedback!"
           ></textarea>
 
           <input
-            className="submit"
+            className="submit bg-blue-400 p-4 rounded-xl text-white"
             type="submit"
             value="Submit"
             onClick={() => sendEmail}

@@ -1,12 +1,12 @@
 import React from "react"
 
-import "../styles/QASection.css"
+import "../assets/main.css"
 
 const QASection = (props) => {
   return (
-    <div className="section">
-      <h3 className="heavy">{props.question}</h3>
-      <p className="normal light">{props.answer}</p>
+    <div className="pb-4">
+      <h3 className="font-semibold text-xl text-gray-900">{props.question}</h3>
+      <p className="text-gray-800">{props.answer}</p>
     </div>
   )
 }

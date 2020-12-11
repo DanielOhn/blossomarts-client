@@ -1,34 +1,34 @@
 import React from "react"
 
-import "../styles/Landing.css"
+import "../assets/main.css"
 import Nature from "../images/Nature"
 
 const Landing = () => {
   return (
-    <div className="landing">
-      <h1 className="primary header">Welcome!</h1>
-      <hr className="primary header" />
-      <section className="light-section">
-        <div className="text">
-          <p>
+    <div className="container mx-auto m-4">
+      <h1 className="text-4xl font-semibold text-gray-900">Welcome!</h1>
+      <hr className="" />
+      <section className="flex flex-row flex-nowrap justify-center p-2 m-4">
+        <div className="self-center max-w-md">
+          <p className="text-gray-800 text-left">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent
             pellentesque ultricies urna.
           </p>
         </div>
         <Nature />
       </section>
-      <section className="dark-section">
+      <section className="mx-auto flex flex-row flex-nowrap justify-center p-2 m-4">
         <Nature />
-        <div className="text">
-          <p>
+        <div className="self-center max-w-md">
+          <p className="text-gray-800 text-right">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent
             pellentesque ultricies urna.
           </p>
         </div>
       </section>
-      <section className="light-section">
-        <div className="text">
-          <p>
+      <section className="mx-auto flex flex-row flex-nowrap justify-center p-2 m-4">
+        <div className="self-center max-w-md">
+          <p className="text-gray-800 text-left">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent
             pellentesque ultricies urna.
           </p>

@@ -1,5 +1,6 @@
 import React from "react"
-import "../styles/App.css"
+// import "../styles/App.css"
+import "../assets/main.css"
 
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom"
 
@@ -17,24 +18,44 @@ import Cancel from "../pages/Cancel"
 
 function App() {
   return (
-    <div className="App">
+    <div className="container mx-auto">
       <Router>
-        <div className="logo">
-          <img alt="Background cover" className="logo-image" src={logo} />
+        <div className="p-8 flex justify-center">
+          <img alt="Background cover" className="h-72" src={logo} />
         </div>
-        <div className="navbar">
-          <ul className="nav">
+        <div className="mx-auto w-96">
+          <ul className="flex flex-row flex-no-wrap justify-evenly p-2">
             <li>
-              <Link to="/">Home</Link>
+              <Link
+                className="pt-2 pb-2 pl-4 pr-4 bg-blue-400 text-white rounded"
+                to="/"
+              >
+                Home
+              </Link>
             </li>
             <li>
-              <Link to="/contact">Contact</Link>
+              <Link
+                className="pt-2 pb-2 pl-4 pr-4 bg-blue-400 text-white rounded"
+                to="/contact"
+              >
+                Contact
+              </Link>
             </li>
             <li>
-              <Link to="/products">Products</Link>
+              <Link
+                className="pt-2 pb-2 pl-4 pr-4 bg-blue-400 text-white rounded"
+                to="/products"
+              >
+                Products
+              </Link>
             </li>
             <li>
-              <Link to="/checkout">Checkout</Link>
+              <Link
+                className="pt-2 pb-2 pl-4 pr-4 bg-blue-400 text-white rounded"
+                to="/checkout"
+              >
+                Checkout
+              </Link>
             </li>
           </ul>
         </div>
